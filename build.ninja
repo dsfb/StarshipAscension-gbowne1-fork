@@ -1,0 +1,12 @@
+rule src_util_o_rule
+  command = cmd /c "Makefile:19: update target 'src/util.o' due to: target does not exist && g++ -Wall -Werror -Wextra -Wpedantic -pedantic -std=c++17 -Iinclude -O3 -c src/util.cpp -o src/util.o"
+build src/util.o: src_util_o_rule src/util.cpp 
+rule src_game_o_rule
+  command = cmd /c "Makefile:19: update target 'src/game.o' due to: target does not exist && g++ -Wall -Werror -Wextra -Wpedantic -pedantic -std=c++17 -Iinclude -O3 -c src/game.cpp -o src/game.o"
+build src/game.o: src_game_o_rule src/game.cpp 
+rule src_main_o_rule
+  command = cmd /c "Makefile:19: update target 'src/main.o' due to: target does not exist && g++ -Wall -Werror -Wextra -Wpedantic -pedantic -std=c++17 -Iinclude -O3 -c src/main.cpp -o src/main.o"
+build src/main.o: src_main_o_rule src/main.cpp 
+rule StarshipAscension_rule
+  command = cmd /c "Makefile:16: update target 'StarshipAscension' due to: target does not exist && g++ src/main.o src/game.o src/util.o -o StarshipAscension"
+build StarshipAscension: StarshipAscension_rule src/main.o src/game.o src/util.o 
