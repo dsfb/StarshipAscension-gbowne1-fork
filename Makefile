@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra -Wpedantic -pedantic -std=c++17 -Iinclude
-SOURCES = src/main.cpp src/game.cpp src/util.cpp
+SOURCES = src/main.cpp src/game.cpp src/util.cpp src/ship.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 EXEC = StarshipAscension
 
